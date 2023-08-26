@@ -1,7 +1,9 @@
 <?php
+$date ='2019-01-01';
+$date2 = '2019-02-02';
+//creation d'un nouvel objet 
+$d = new Datetime($date);
+$d2 = new DateTime($date2);
+$diff = $d->diff($d2, true);
 
-//creation d'un nouvel objet || $x-> declare une methode (modify(), format()...)
-$date = new Datetime();
-$date->modify('+1month');
-echo $date-> format('d/m/Y');
-var_dump($date);
+echo "Il y a {$diff->days} jours d'écart";
