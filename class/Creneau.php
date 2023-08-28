@@ -32,4 +32,9 @@ class Creneau {
             $this->inclusHeure($creneau->fin) ||
             ($this->debut < $creneau->debut && $this->fin > $creneau->fin);
     }
+//recupère le contenu d'origine, on peut aussi ajouter des fonctions
+//    public function intersect(Creneau $creneau) : bool
+//    {
+//       parent::intersect();    
+//    }
 }
