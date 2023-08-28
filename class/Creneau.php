@@ -3,6 +3,8 @@
 // definir des horaire en parametre et verfifier si un creneau est true/false pour les heures d ouverture
 class Creneau {
     
+    public static $static ='static-test';
+
     public $debut;
 
     public $fin;
@@ -15,7 +17,7 @@ class Creneau {
 
     public function toHTML() :string
     {
-        return "<strong>{$this->debut}h</strong> à <strong>{$this->fin}h</strong> ";
+        return "<strong>{$this->debut}h</strong> à <strong>{$this->fin}h</strong> \n";
     }
 
     public function inclusHeure(int $heure) : bool
