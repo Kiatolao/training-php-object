@@ -1,5 +1,10 @@
 <?php
+try {
 $curl = curl_init('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m');
+} catch (Exception $e) {
+    die($e->getMessage());
+    return [];
+};
 $data = curl_exec($curl);
 
 //permet de desactiver la verification SSL - mauvaise pratique
@@ -15,12 +20,14 @@ curl_setopt_array(
 );
 
 if ($data === false) {
-    var_dump(curl_error($curl));
+
+    $error= curl_error($curl);
+    throw new Exception($error);
 } else {
     if (curl_getinfo($curl, CURLINFO_HTTP_CODE) === 200){
         $data = json_decode($data, true);
         echo '<pre>';
-            var_dump($data['current_weather']['temperature']);
+            var_dump($data);
         echo '</pre>';
     }
     }
