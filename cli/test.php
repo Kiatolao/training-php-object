@@ -1,4 +1,5 @@
 <?php
+phpinfo();
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'DoubleCreneau.php';
 //appel d'une classe
 $creneau= new DoubleCreneau(8, 12);
