@@ -8,8 +8,12 @@ $pdo = new PDO('sqlite:data.db', null, null,[
 $error = null;
 //capture l'exception en cas d'erreur
 try {
-    $query = $pdo->query('SELECT * FROM posts');
-    $posts = $query->fetchAll();
+// SECURTITé! requete préparée qui empeche les injections SQL    
+    $query = $pdo->prepare('SELECT * FROM posts WHERE id = :id');
+    $query->execute([
+        'id' => $_GET['id']
+    ]);
+    $posts = $query->fetch();
 }
 catch(PDOException $e) {
     $error = $e->getMessage();
@@ -21,9 +25,9 @@ echo '</pre>';
 <?php if ($error) : ?>
     <p>Error <?=$error?></p>
 <?php else :?>
-<!-- recupère la data de la databse   htmlentities contre injection SQL  -->
+<!-- recupère la data de la databse     -->
 <ul><?php foreach($posts as $post) :?>
-    <li><a href="edit.php?if=<?=$post->id?>"></a><?= htmlentities($post->title)?></li>
+    <li><?= htmlentities($post->title)?></li>
     <?php endforeach?>
 </ul>
 <?php endif ?>
