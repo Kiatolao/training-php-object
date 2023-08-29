@@ -23,7 +23,7 @@ echo '</pre>';
 <?php else :?>
 <!-- recupère la data de la databse   htmlentities contre injection SQL  -->
 <ul><?php foreach($posts as $post) :?>
-    <li><a href="edit.php?if=<?=$post->id?>"></a><?= htmlentities($post->title)?></li>
+    <li><a href="edit.php?id=<?=$post->id?>"><?= htmlentities($post->title)?></a></li>
     <?php endforeach?>
 </ul>
 <?php endif ?>
