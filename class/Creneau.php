@@ -25,16 +25,4 @@ class Creneau {
         return $heure >= $this->debut && $heure <=$this->fin;
     }
 
-//verification d'englobage du creneau (ne se chevauche pas)
-    public function intersect(Creneau $creneau) : bool
-    {
-        return $this->inclusHeure($creneau->debut) ||
-            $this->inclusHeure($creneau->fin) ||
-            ($this->debut < $creneau->debut && $this->fin > $creneau->fin);
-    }
-//recupère le contenu d'origine, on peut aussi ajouter des fonctions
-//    public function intersect(Creneau $creneau) : bool
-//    {
-//       parent::intersect();    
-//    }
 }
