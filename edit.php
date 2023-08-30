@@ -17,7 +17,7 @@ try {
             'id' => $_GET['id']
         ]);
     }
-// SECURTITé! requete préparée qui empeche les injections SQL    
+// SECURTITé! on utilise prepare pour des requete préparée qui empeche les injections SQL    
     $query = $pdo->prepare('SELECT * FROM posts WHERE id = :id');
     $query->execute([
         'id' => $_GET['id']
