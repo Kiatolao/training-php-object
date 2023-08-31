@@ -22,4 +22,7 @@ php composer.phar dump autoload
 en parrallèle on pourra instaler l extension namespace de Mehedi
 en faisant ctrl shift P il importera automatiquement la classe adaptée
 ctrl alt i pour automatiser
+
+Dans le cas d un partage de code sans le vendor
+php composer install
 */
