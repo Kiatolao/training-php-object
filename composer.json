@@ -1,0 +1,15 @@
+{
+    "name": "kiato/training",
+    "autoload": {
+        "psr-4": {
+            "Kiato\\Training\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kiatolao",
+            "email": "94093817+Kiatolao@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}

@@ -9,4 +9,17 @@ php -r "unlink('composer-setup.php');"
 
 puis pour l utiliser
 php composer.phar 
+php composer.phar init
+
+dans le composer.json
+setup l'autoload dans psr4
+exemple
+"App\\":"class/"
+
+ensuite
+php composer.phar dump autoload
+
+en parrallèle on pourra instaler l extension namespace de Mehedi
+en faisant ctrl shift P il importera automatiquement la classe adaptée
+ctrl alt i pour automatiser
 */
