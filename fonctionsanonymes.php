@@ -12,6 +12,7 @@ var_dump($maFonction("John Doe"));
 //afficher l age de l eleve
 //afficher la moyenne de l eleve
 
+$key = "moyenne";
 $eleves = [
     [
         "nom" => "John Doe",
@@ -29,10 +30,10 @@ $eleves = [
         "moyenne" => 14
     ]
 ];
-
-$sortMoyenne = function ($eleve1, $eleve2) {
-    return $eleve1["moyenne"] - $eleve2["moyenne"];
+//permet d utiliser une variable exterieure a la fonction
+$sort = function ($eleve1, $eleve2) use ($key) {
+    return $eleve1[$key] - $eleve2[$key];
 };
 
-usort($eleves, $sortMoyenne);
+usort($eleves, $sort);
 var_dump($eleves);
