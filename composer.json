@@ -1,8 +1,8 @@
 {
-    "name": "kiato/training",
+    "name": "kiato-dv/training-php-object",
     "autoload": {
         "psr-4": {
-            "Kiato\\Training\\": "src/"
+            "KiatoDv\\TrainingPhpObject\\": "src/"
         }
     },
     "authors": [

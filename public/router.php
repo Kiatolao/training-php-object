@@ -2,14 +2,14 @@
 require "../vendor/autoload.php";
 require "../elements/header.php";
 $uri = $_SERVER['REQUEST_URI'];
-if ($uri['REQUEST_URI'] === '/nous-contacter') {
-    require '../templates/contact.php';
-} elseif ($uri['REQUEST_URI'] === '/') {
-    require '../templates/home.php';
-} else {
-    http_response_code(404);
-    echo "404";
-}  
+// altorouter extension doit être instancié
+$router = new AltoRouter();
+$router->map('GET', '/', function () {
+    echo "Home";}
+);
+$router->map('GET', '/nous-contacter', function () {
+    echo "Nous contacter";}
+);
  require "../elements/footer.php";
 ?>
 
