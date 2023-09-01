@@ -35,5 +35,14 @@ $sort = function ($eleve1, $eleve2) use ($key) {
     return $eleve1[$key] - $eleve2[$key];
 };
 
+
+/*
+option 2
+function sorterByKey($key){
+    return function ($eleve1, $eleve2) use ($key) {
+        return $eleve1[$key] - $eleve2[$key];
+    };
+};
+ */
 usort($eleves, $sort);
 var_dump($eleves);
